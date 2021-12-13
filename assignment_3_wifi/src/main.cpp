@@ -41,12 +41,6 @@ Serial.print("\nConnection succesfull!");
  }
    
   WifiStatus();
-/*
-  StaticJsonDocument<200> doc;
-
-  serializeJson(doc, Serial);
-
-  Serial.println(doc);*/
 }
 
 void loop() {
