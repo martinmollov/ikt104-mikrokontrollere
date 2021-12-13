@@ -227,49 +227,14 @@ void loop()
   humidity = ((1.0 * H1) - (1.0 * H0)) * (1.0 * humidity - 1.0 * H2) / (1.0 * H3 - 1.0 * H2) + (1.0 * H0);
   int temp = (val[3] * 256) + val[2];
   float cTemp = (((T1 - T0) / 8.0) * temp) / T3 + (T0 / 8.0);
-  /*float cTemp2 = (T0 + T1) / 2;
-  float t1 = (T1 - T0) / 8.0;
-  float t2 = (T1 - T0) / 8.0 * (temp - T2);
-  float t3 = T3 - T2;
-  float t4 = T0 / 8.0;
-  float t5 = (T3 - T2) + (T0 / 8.0);*/
 
-  
   // Output data to serial monitor
   Serial.print("\nRelative humidity : ");
   Serial.print(humidity);
   Serial.println(" % RH");
   Serial.print("Temperature in Celsius : ");
   Serial.print(cTemp);
-  Serial.println(" C");/*
-  Serial.print("Temperature 2 in Celsius : ");
-  Serial.print(cTemp2);
   Serial.println(" C");
-  Serial.print("\n(T1 - T0) / 8.0) : ");
-  Serial.print(t1);
-  Serial.print("\n(T1 - T0) / 8.0) * (temp - T2) : ");
-  Serial.print(t2);
-  Serial.print("\nT3 - T2 : ");
-  Serial.print(t3);
-  Serial.print("\nT0 / 8.0 : ");
-  Serial.print(t4);
-  Serial.print("\n(T3 - T2) + (T0 / 8.0) : ");
-  Serial.print(t5);*/
-
-  /*Serial.print("\nTemp : ");
-  Serial.print(temp);
-  Serial.print("\nT0 : ");
-  Serial.print(T0);
-  Serial.print("\nT1 : ");
-  Serial.print(T1);
-  Serial.print("\nT2 : ");
-  Serial.print(T2);
-  Serial.print("\nT3 : ");
-  Serial.print(T3);
-  Serial.print("\nVal[2] : ");
-  Serial.print(val[2]);
-  Serial.print("\nVal[3] : ");
-  Serial.print(val[3]);*/
 
   if (cTemp >= 28.00)
   {
